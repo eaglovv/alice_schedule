@@ -8,7 +8,7 @@ def health_check():
     return jsonify({'status': 'ok'}), 200
 
 # Основной эндпоинт для связи с Алисой
-@app.route('/', methods=['POST'])
+@app.route('/alice', methods=['POST'])
 def main():
     req = request.json
     command = req.get('request', {}).get('command', '').lower()
